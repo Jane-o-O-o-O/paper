@@ -4,6 +4,9 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Claude Code 安装指南 - 完整教程',
   description: '详细的 Claude Code 安装教程和配置说明',
+  icons: {
+    icon: '/favicon.png',
+  },
 }
 
 export default function RootLayout({

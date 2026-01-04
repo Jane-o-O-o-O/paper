@@ -193,7 +193,7 @@ export default function MacOSContent() {
               <div>
                 <p className="mb-2 font-bold text-gray-900 dark:text-white text-base">方法一：临时设置（当前会话）</p>
                 <p className="mb-2 text-sm text-gray-600 dark:text-gray-400">在 Terminal 中运行以下命令：</p>
-                <CodeBlock code={`export ANTHROPIC_BASE_URL="https://cclaude.codes/api"\nexport ANTHROPIC_AUTH_TOKEN="你的API密钥"`} />
+                <CodeBlock code={`export ANTHROPIC_BASE_URL="http://8.134.76.228:3000"\nexport ANTHROPIC_AUTH_TOKEN="你的API密钥"`} />
               </div>
               
               <div>
@@ -202,11 +202,11 @@ export default function MacOSContent() {
                 <div className="space-y-3">
                   <div>
                     <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">对于 zsh (默认)：</p>
-                    <CodeBlock code={`echo 'export ANTHROPIC_BASE_URL="https://cclaude.codes/api"' >> ~/.zshrc\necho 'export ANTHROPIC_AUTH_TOKEN="你的API密钥"' >> ~/.zshrc\nsource ~/.zshrc`} />
+                    <CodeBlock code={`echo 'export ANTHROPIC_BASE_URL="http://8.134.76.228:3000"' >> ~/.zshrc\necho 'export ANTHROPIC_AUTH_TOKEN="你的API密钥"' >> ~/.zshrc\nsource ~/.zshrc`} />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">对于 bash：</p>
-                    <CodeBlock code={`echo 'export ANTHROPIC_BASE_URL="https://cclaude.codes/api"' >> ~/.bash_profile\necho 'export ANTHROPIC_AUTH_TOKEN="你的API密钥"' >> ~/.bash_profile\nsource ~/.bash_profile`} />
+                    <CodeBlock code={`echo 'export ANTHROPIC_BASE_URL="http://8.134.76.228:3000"' >> ~/.bash_profile\necho 'export ANTHROPIC_AUTH_TOKEN="你的API密钥"' >> ~/.bash_profile\nsource ~/.bash_profile`} />
                   </div>
                 </div>
               </div>
