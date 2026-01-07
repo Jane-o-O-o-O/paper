@@ -14,7 +14,7 @@ export default function AnnouncementBanner({
   bannerImage 
 }: AnnouncementBannerProps) {
   return (
-    <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 p-8 md:p-12 text-white shadow-2xl">
+    <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 p-8 md:p-12 text-white shadow-2xl">
       {/* 背景装饰 */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
@@ -35,7 +35,7 @@ export default function AnnouncementBanner({
 
         {/* 图片展示 */}
         {bannerImage && (
-          <div className="flex-shrink-0 w-full lg:w-96">
+          <div className="flex-shrink-0 w-full lg:w-[500px]">
             <div className="relative rounded-xl overflow-hidden shadow-2xl border-4 border-white/20">
               <img 
                 src={bannerImage} 

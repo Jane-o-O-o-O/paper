@@ -8,15 +8,15 @@ import { siteConfig } from '@/config/site'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <header className="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
+      <header className="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50 border-b border-orange-100 dark:border-gray-700">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
             Claude API 服务
           </h1>
           <div className="flex items-center gap-4">
             <Link 
-              href="/tutorial" 
+              href="/docs" 
               className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
             >
               📚 使用教程
@@ -52,7 +52,7 @@ export default function Home() {
             {siteConfig.pricingPlans.map((plan, index) => (
               <div
                 key={index}
-                className={`relative rounded-2xl p-8 transition-all duration-300 hover:scale-105 ${
+                className={`relative rounded-2xl p-8 transition-all duration-300 hover:scale-105 flex flex-col ${
                   plan.popular
                     ? 'bg-gradient-to-br from-blue-500 to-purple-600 text-white shadow-2xl ring-4 ring-blue-300 dark:ring-blue-700'
                     : 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-lg hover:shadow-xl'
@@ -72,7 +72,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-3 mb-8 flex-grow">
                   {plan.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start">
                       <span className="mr-2">✓</span>
@@ -93,6 +93,37 @@ export default function Home() {
                 >
                   立即购买
                 </a>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-16 bg-white dark:bg-gray-800 rounded-2xl p-8 md:p-12 shadow-lg">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 text-center">
+            模型用量消费
+          </h2>
+          <p className="text-center text-gray-600 dark:text-gray-400 mb-8">
+            不同模型的消费倍率说明
+          </p>
+          <div className="max-w-4xl mx-auto space-y-4">
+            {siteConfig.modelPricing.map((model, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-between p-4 rounded-lg bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
+              >
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                    {model.name}
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    {model.description}
+                  </p>
+                </div>
+                <div className="text-right ml-4">
+                  <span className="text-xl font-bold text-blue-600 dark:text-blue-400">
+                    {model.credit}
+                  </span>
+                </div>
               </div>
             ))}
           </div>

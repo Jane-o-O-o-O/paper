@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useState } from 'react'
 
 interface AcquisitionMethod {
   id: string
@@ -11,6 +12,7 @@ interface AcquisitionMethod {
   action: string
   actionLink: string
   highlight: boolean
+  copyText?: string
 }
 
 interface ApiAcquisitionMethodsProps {
@@ -18,6 +20,18 @@ interface ApiAcquisitionMethodsProps {
 }
 
 export default function ApiAcquisitionMethods({ methods }: ApiAcquisitionMethodsProps) {
+  const [copiedId, setCopiedId] = useState<string | null>(null)
+
+  const handleCopy = async (text: string, id: string) => {
+    try {
+      await navigator.clipboard.writeText(text)
+      setCopiedId(id)
+      setTimeout(() => setCopiedId(null), 2000)
+    } catch (err) {
+      console.error('复制失败:', err)
+    }
+  }
+
   return (
     <div className="py-12">
       <div className="text-center mb-12">
@@ -54,16 +68,29 @@ export default function ApiAcquisitionMethods({ methods }: ApiAcquisitionMethods
               <div className="text-3xl font-bold mb-6">
                 {method.amount}
               </div>
-              <Link
-                href={method.actionLink}
-                className={`inline-block w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 ${
-                  method.highlight
-                    ? 'bg-white text-blue-600 hover:bg-blue-50'
-                    : 'bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600'
-                }`}
-              >
-                {method.action}
-              </Link>
+              {method.copyText ? (
+                <button
+                  onClick={() => handleCopy(method.copyText!, method.id)}
+                  className={`inline-block w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 ${
+                    method.highlight
+                      ? 'bg-white text-blue-600 hover:bg-blue-50'
+                      : 'bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600'
+                  }`}
+                >
+                  {copiedId === method.id ? '✓ 已复制' : method.action}
+                </button>
+              ) : (
+                <Link
+                  href={method.actionLink}
+                  className={`inline-block w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 ${
+                    method.highlight
+                      ? 'bg-white text-blue-600 hover:bg-blue-50'
+                      : 'bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600'
+                  }`}
+                >
+                  {method.action}
+                </Link>
+              )}
             </div>
           </div>
         ))}
