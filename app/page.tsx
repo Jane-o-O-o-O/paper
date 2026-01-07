@@ -38,7 +38,7 @@ export default function Home() {
           <ApiAcquisitionMethods methods={siteConfig.acquisitionMethods} />
         </div>
 
-        <div className="mt-16">
+        <div id="pricing-section" className="mt-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               套餐价格
@@ -164,16 +164,16 @@ export default function Home() {
 
       <footer className="bg-white dark:bg-gray-800 mt-16 py-8 border-t border-gray-200 dark:border-gray-700">
         <div className="container mx-auto px-4 text-center text-gray-600 dark:text-gray-400">
-          <p>© 2025 Claude API 服务. All rights reserved.</p>
+          <p>© 2026 Claude API 服务. All rights reserved.</p>
           <div className="mt-4 flex justify-center gap-6">
             <a href={`mailto:${siteConfig.contactInfo.email}`} className="hover:text-blue-600 dark:hover:text-blue-400">
               📧 邮箱联系
             </a>
             <span className="hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer">
-              💬 微信: {siteConfig.contactInfo.wechat}
+              💬 微信: Jane-o-O-o-O
             </span>
             <span className="hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer">
-              🐧 QQ: {siteConfig.contactInfo.qq}
+              🐧 QQ: 2689124001
             </span>
           </div>
         </div>

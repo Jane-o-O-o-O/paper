@@ -79,6 +79,29 @@ export default function ApiAcquisitionMethods({ methods }: ApiAcquisitionMethods
                 >
                   {copiedId === method.id ? '✓ 已复制' : method.action}
                 </button>
+              ) : method.actionLink.startsWith('#') ? (
+                <button
+                  onClick={() => {
+                    const element = document.querySelector(method.actionLink)
+                    if (element) {
+                      // 计算偏移量，让套餐卡片显示在更好的位置
+                      const elementRect = element.getBoundingClientRect()
+                      const offsetTop = window.pageYOffset + elementRect.top - 100 // 向上偏移100px
+                      
+                      window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                      })
+                    }
+                  }}
+                  className={`inline-block w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 ${
+                    method.highlight
+                      ? 'bg-white text-blue-600 hover:bg-blue-50'
+                      : 'bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600'
+                  }`}
+                >
+                  {method.action}
+                </button>
               ) : (
                 <Link
                   href={method.actionLink}

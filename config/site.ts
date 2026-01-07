@@ -33,7 +33,7 @@ export const siteConfig = {
       description: "选择适合您的套餐",
       amount: "多种套餐可选",
       action: "查看套餐",
-      actionLink: "https://your-pricing-link.com",
+      actionLink: "#pricing-section",
       highlight: false
     }
   ],
@@ -93,7 +93,7 @@ export const siteConfig = {
 
   contactInfo: {
     email: "support@example.com",
-    wechat: "your-wechat-id",
-    qq: "123456789"
+    wechat: "Jane-o-O-o-O",
+    qq: "2689124001"
   }
 }
