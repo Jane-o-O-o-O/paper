@@ -21,7 +21,7 @@ export const siteConfig = {
       title: "进行star",
       icon: "👥",
       description: "联系up主，互惠star项目，更有100刀相送",
-      amount: "每人 100 刀",
+      amount: " 100 刀",
       action: "项目链接",
       actionLink: "https://github.com/lllllllama/deeptrender",
       highlight: true
