@@ -252,7 +252,7 @@ export default function WindowsContent() {
                     <p className="mb-2 text-sm text-gray-600 dark:text-gray-400">在 PowerShell 中运行以下命令设置用户级环境变量：</p>
                     <CodeBlock 
                       comment="# 设置用户级环境变量（永久生效）"
-                      code={`[System.Environment]::SetEnvironmentVariable("ANTHROPIC_BASE_URL", "http://8.134.76.228:3000", [System.EnvironmentVariableTarget]::User)\n[System.Environment]::SetEnvironmentVariable("ANTHROPIC_AUTH_TOKEN", "你的API密钥", [System.EnvironmentVariableTarget]::User)`}
+                      code={`[System.Environment]::SetEnvironmentVariable("ANTHROPIC_BASE_URL", "http://claudecode.sylu.cc/", [System.EnvironmentVariableTarget]::User)\n[System.Environment]::SetEnvironmentVariable("ANTHROPIC_AUTH_TOKEN", "你的API密钥", [System.EnvironmentVariableTarget]::User)`}
                     />
                     <p className="mt-2 text-xs text-blue-600 dark:text-blue-400">💡 设置后需要重新打开 PowerShell 窗口才能生效。</p>
                   </div>
@@ -265,7 +265,7 @@ export default function WindowsContent() {
                   <div>
                     <p className="mb-2 font-medium text-gray-800 dark:text-gray-200">永久设置（强烈推荐）</p>
                     <p className="mb-2 text-sm text-gray-600 dark:text-gray-400">在 CMD 中运行以下命令设置用户级环境变量：</p>
-                    <CodeBlock code={`setx ANTHROPIC_BASE_URL "http://8.134.76.228:3000"\nsetx ANTHROPIC_AUTH_TOKEN "你的API密钥"`} />
+                    <CodeBlock code={`setx ANTHROPIC_BASE_URL "http://claudecode.sylu.cc/"\nsetx ANTHROPIC_AUTH_TOKEN "你的API密钥"`} />
                     <p className="mt-2 text-xs text-blue-600 dark:text-blue-400">💡 设置后需要重新打开 CMD 窗口才能生效。</p>
                   </div>
                 </div>

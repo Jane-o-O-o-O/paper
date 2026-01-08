@@ -41,14 +41,14 @@ export const siteConfig = {
   pricingPlans: [
     {
       name: "基础套餐",
-      price: "¥39",
+      price: "¥29",
       tokens: "100刀",
       features: ["支持所有模型", "7x24小时服务", "API 文档支持"],
       purchaseLink: "https://pay.ldxp.cn/item/39phjz"
     },
     {
       name: "进阶套餐",
-      price: "¥59",
+      price: "¥49",
       tokens: "200刀",
       features: ["支持所有模型", "7x24小时服务", "API 文档支持", "优先技术支持"],
       popular: true,
@@ -56,7 +56,7 @@ export const siteConfig = {
     },
     {
       name: "专业套餐",
-      price: "¥89",
+      price: "¥79",
       tokens: "300刀",
       features: ["支持所有模型", "7x24小时服务", "API 文档支持", "优先技术支持", "更高并发限制"],
       purchaseLink: "https://pay.ldxp.cn/item/2muzn5"
